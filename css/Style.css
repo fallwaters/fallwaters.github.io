@@ -421,12 +421,12 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
 
 .top-buttons {
     position: absolute;
-    text-align: center;
+    text-align: right;
     color: #fff;
     margin-left: auto;
     left: 0;
     right: 0;
-    margin-right: auto;
+    margin-right: 50px;
     margin-top: 500px;
     z-index: 2;
 }
@@ -1647,6 +1647,7 @@ table.fixed td:nth-of-type(3) {
 
     .top-buttons {
         margin-top: 230px;
+        left: 50px;
     }
 
     .socials .utube {
