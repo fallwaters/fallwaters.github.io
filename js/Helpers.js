@@ -97,17 +97,16 @@ var memes = true;
     //        }, 500);
         if (memes){
             var offs = $($(this).children('a').attr('href')).offset().top;
+            var t = $(this).offset().top;
             console.log(offs);
-            if (offs > $(this).offset().top) {
-                var t = $(this).offset().top;
-                var i = 1;
-                for (i = 1; i < 400; i++){
+            if (offs > t) {
+                for (let i = 1; i < 40; i++){
                     $('html, body').stop().animate({
-                        scrollTop: (t - offs)*cos(i)/400;
-                    }, 1);
+                        scrollTop: t + (offs-t)*i/40;
+                    }, Math.abs(Math.cos(i))*400);
                 }
-            }   
-            else if (offs < $(this).offset().top) {
+            }
+            else if (offs < t) {
                 $('html, body').stop().animate({
                   scrollTop: offs - 20
               }, 400, function() {
@@ -353,4 +352,3 @@ function linkSwitchToNext(){
         $('.el-desc').css('opacity', '1');
     }
 }
-
