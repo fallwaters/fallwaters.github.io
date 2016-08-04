@@ -103,7 +103,7 @@ var memes = true;
                 var i = 1;
                 for (i = 1; i < 400; i++){
                     $('html, body').stop().animate({
-                        scrollTop: (t - offs)*i/400;
+                        scrollTop: (t - offs)*cos(i)/400;
                     }, 1);
                 }
             }   
