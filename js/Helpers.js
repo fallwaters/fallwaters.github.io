@@ -99,15 +99,14 @@ var memes = true;
             var offs = $($(this).children('a').attr('href')).offset().top;
             console.log(offs);
             if (offs > $(this).offset().top) {
-              $('html, body').stop().animate({
-                  scrollTop: offs + 20
-              }, 400, function() {
-
-              $('html, body').animate({
-                  scrollTop: offs
-              }, 120, function () {$(document).on('scroll', onScroll)});
-            });
-            }
+                var t = $(this).offset().top;
+                var i = 1;
+                for (i = 1; i < 400; i++){
+                    $('html, body').stop().animate({
+                        scrollTop: (t - offs)*i/400;
+                    }, 1);
+                }
+            }   
             else if (offs < $(this).offset().top) {
                 $('html, body').stop().animate({
                   scrollTop: offs - 20
@@ -354,3 +353,4 @@ function linkSwitchToNext(){
         $('.el-desc').css('opacity', '1');
     }
 }
+
