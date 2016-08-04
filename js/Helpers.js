@@ -152,9 +152,9 @@ var memes = true;
     });
 
     $('.btn-more').mouseleave(function () {
-        $(this).css('background-color', 'rgba(198, 21, 20, .4)');
+        $(this).css('background-color', 'rgba(139, 195, 74, .4)');
     }).mouseenter(function () {
-        $(this).css('background-color', 'rgba(198, 21, 20, 1)');
+        $(this).css('background-color', '#24AD1B');
     });
 
     $('.btn-more').click(function () {

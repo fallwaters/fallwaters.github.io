@@ -243,7 +243,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
         display: inline-block;
         position: relative;
         z-index: 101;
-        margin-top: 210px;
+        margin-top: 250px;
         background-color: #030301;
         border-right: 5px solid #24AD1B;
     }
@@ -473,7 +473,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
 }
 
 .our-scheme, .our-deals {
-    padding: 0 0 60px 0;
+    padding: 0;
     background: #fff;
     position: relative;
 }
@@ -501,6 +501,16 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
             bottom: -75%;
             height: 100%;
             background: url(../img/about-us-dl.png) no-repeat center;
+            width: 100%;
+            left: 0;
+        }
+
+        .our-scheme h1::after {
+            content: '';
+            position: absolute;
+            bottom: -75%;
+            height: 100%;
+            background: url(../img/prices-dl.png) no-repeat center;
             width: 100%;
             left: 0;
         }
@@ -1015,6 +1025,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
 
 .our-deals .deals {
     margin-top: 75px;
+    padding-bottom: 50px;
 }
 
     .our-deals .deals .deal {
@@ -1271,6 +1282,7 @@ table.fixed td:nth-of-type(3) {
 
 .our-contacts .contacts {
     margin-top: 90px;
+    border-right: 5px solid #24AD1B;
 }
 
     .our-contacts .contacts div {
@@ -1288,7 +1300,7 @@ table.fixed td:nth-of-type(3) {
 }
 
     .our-contacts .contact-form .red-border {
-        border-left: 1px solid #24AD1B;
+        border-left: 5px solid #24AD1B;
         padding: 0 25px 0 15px;
         margin-left: 200px;
     }
