@@ -285,6 +285,7 @@ var memes = true;
             console.log(offs);
             var time = 10000;
             if (offs > t) {
+                e.preventDefault();
                 $('html, body').stop().animate({
                   scrollTop: offs+40
               }, 700, 'easeOutCubic', function() {
@@ -329,6 +330,7 @@ var memes = true;
                                                    
                                                    
             else if (offs < t) {
+                e.preventDefault();
                 $('html, body').stop().animate({
                   scrollTop: offs-40
               }, 700, 'easeOutCubic', function() {
