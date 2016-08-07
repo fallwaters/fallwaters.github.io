@@ -1,3 +1,188 @@
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	},
+	easeInCubic: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t + b;
+	},
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeInOutCubic: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	},
+	easeInQuart: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeInOutQuart: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+		return -c/2 * ((t-=2)*t*t*t - 2) + b;
+	},
+	easeInQuint: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t*t + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeInOutQuint: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	},
+	easeInSine: function (x, t, b, c, d) {
+		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+	},
+	easeOutSine: function (x, t, b, c, d) {
+		return c * Math.sin(t/d * (Math.PI/2)) + b;
+	},
+	easeInOutSine: function (x, t, b, c, d) {
+		return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+	},
+	easeInExpo: function (x, t, b, c, d) {
+		return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	},
+	easeInOutExpo: function (x, t, b, c, d) {
+		if (t==0) return b;
+		if (t==d) return b+c;
+		if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+	},
+	easeInCirc: function (x, t, b, c, d) {
+		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+	},
+	easeOutCirc: function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	},
+	easeInOutCirc: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+		return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+	},
+	easeInElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+	},
+	easeOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+	},
+	easeInOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+		return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+	},
+	easeInBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*(t/=d)*t*((s+1)*t - s) + b;
+	},
+	easeOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	},
+	easeInOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158; 
+		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+	},
+	easeInBounce: function (x, t, b, c, d) {
+		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+	},
+	easeOutBounce: function (x, t, b, c, d) {
+		if ((t/=d) < (1/2.75)) {
+			return c*(7.5625*t*t) + b;
+		} else if (t < (2/2.75)) {
+			return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+		} else if (t < (2.5/2.75)) {
+			return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+		} else {
+			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+		}
+	},
+	easeInOutBounce: function (x, t, b, c, d) {
+		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+	}
+});
+
+
+jQuery.extend( jQuery.easing,
+{
+	easeIn: function (x, t, b, c, d) {
+		return jQuery.easing.easeInQuad(x, t, b, c, d);
+	},
+	easeOut: function (x, t, b, c, d) {
+		return jQuery.easing.easeOutQuad(x, t, b, c, d);
+	},
+	easeInOut: function (x, t, b, c, d) {
+		return jQuery.easing.easeInOutQuad(x, t, b, c, d);
+	},
+	expoin: function(x, t, b, c, d) {
+		return jQuery.easing.easeInExpo(x, t, b, c, d);
+	},
+	expoout: function(x, t, b, c, d) {
+		return jQuery.easing.easeOutExpo(x, t, b, c, d);
+	},
+	expoinout: function(x, t, b, c, d) {
+		return jQuery.easing.easeInOutExpo(x, t, b, c, d);
+	},
+	bouncein: function(x, t, b, c, d) {
+		return jQuery.easing.easeInBounce(x, t, b, c, d);
+	},
+	bounceout: function(x, t, b, c, d) {
+		return jQuery.easing.easeOutBounce(x, t, b, c, d);
+	},
+	bounceinout: function(x, t, b, c, d) {
+		return jQuery.easing.easeInOutBounce(x, t, b, c, d);
+	},
+	elasin: function(x, t, b, c, d) {
+		return jQuery.easing.easeInElastic(x, t, b, c, d);
+	},
+	elasout: function(x, t, b, c, d) {
+		return jQuery.easing.easeOutElastic(x, t, b, c, d);
+	},
+	elasinout: function(x, t, b, c, d) {
+		return jQuery.easing.easeInOutElastic(x, t, b, c, d);
+	},
+	backin: function(x, t, b, c, d) {
+		return jQuery.easing.easeInBack(x, t, b, c, d);
+	},
+	backout: function(x, t, b, c, d) {
+		return jQuery.easing.easeOutBack(x, t, b, c, d);
+	},
+	backinout: function(x, t, b, c, d) {
+		return jQuery.easing.easeInOutBack(x, t, b, c, d);
+	}
+});
+
 $(document).ready(function () {
     // Плавный скролл к якорям
     $('.accordion').on('click', function (e) {
@@ -28,7 +213,7 @@ $(document).ready(function () {
         var anchor2 = $($(this).attr('href')).offset().top;
         $('html, body').stop().animate({
         scrollTop: anchor2
-    }, 400, function() {
+    }, 700, function() {
             $(document).on('scroll', onScroll);
         });
     e.preventDefault();
@@ -43,21 +228,19 @@ $(document).ready(function () {
         if ($(m.attr('href')).offset().top == 0){
             $('html, body').stop().animate({
             scrollTop: $(m.attr('href')).offset().top
-        }, 400, function() {
+        }, 700, function() {
                 $(document).on('scroll', onScroll);
             });
         }
         else {
             var t = $(m.attr('href')).offset().top;
             $('html, body').stop().animate({
-            scrollTop: t + 20
-        }, 400, function() {
-                $('html, body').stop().animate({
-                    scrollTop: t
-                }, 120, function(){$(document).on('scroll', onScroll)})
-                
-            });
-        }
+                  scrollTop: t+40
+              }, 700, 'easeOutCubic', function() {
+                                              $('html, body').stop().animate({
+                                            scrollTop: t
+              }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
+            }
 //        $('html, body').stop().animate({
 //            var offs1 = $(anchor.attr('href')).offset().top;
 //            scrollTop: offs1 + 20
@@ -85,6 +268,7 @@ var memes = true;
         $(this).parent().addClass('active');
     });
 
+
     $('.left-side-bar .menu ul li').click(function (e) {
         e.preventDefault();
          $(document).off("scroll");
@@ -99,22 +283,58 @@ var memes = true;
             var offs = $($(this).children('a').attr('href')).offset().top;
             var t = $(this).offset().top;
             console.log(offs);
+            var time = 10000;
             if (offs > t) {
-                for (let i = 1; i < 40; i++){
-                    $('html, body').stop().animate({
-                        scrollTop: t + (offs-t)*i/40;
-                    }, Math.abs(Math.cos(i))*400);
-                }
+                $('html, body').stop().animate({
+                  scrollTop: offs+40
+              }, 700, 'easeOutCubic', function() {
+                                              $('html, body').stop().animate({
+                                            scrollTop: offs
+              }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
+//                $('html, body').stop().animate({
+//                  scrollTop: t+(offs-t)*4/40 
+//              }, 50, function() {
+//                        $('html, body').animate({
+//                  scrollTop: t+(offs-t)*8/40 
+//              }, 50, function() {
+//                            $('html, body').animate({
+//                  scrollTop: t+(offs-t)*12/40 
+//              }, 50, function() {
+//                            $('html, body').animate({
+//                  scrollTop: t+(offs-t)*16/40 
+//              }, 50, function() {
+//                                  $('html, body').animate({
+//                  scrollTop: t+(offs-t)*20/40 
+//              }, 50, function() {
+//                                    $('html, body').animate({
+//                  scrollTop: t+(offs-t)*24/40 
+//              }, 50, function() {
+//                                      $('html, body').animate({
+//                  scrollTop: t+(offs-t)*28/40 
+//              }, 50, function() {
+//                                        $('html, body').animate({
+//                  scrollTop: t+(offs-t)*32/40 
+//              }, 50, function() {
+//                                          $('html, body').animate({
+//                  scrollTop: t+(offs-t)*36/40 
+//              }, 50, function() {
+//                                            $('html, body').animate({
+//                  scrollTop: offs+10
+//              }, 50, function() {
+//                                              $('html, body').animate({
+//                                            scrollTop: offs
+//              }, 240, function () {$(document).on('scroll', onScroll)})});
+//            });});});});});});});});});
             }
+                                                   
+                                                   
             else if (offs < t) {
                 $('html, body').stop().animate({
-                  scrollTop: offs - 20
-              }, 400, function() {
-
-              $('html, body').animate({
-                  scrollTop: offs
-              }, 120, function () {$(document).on('scroll', onScroll)});
-            });
+                  scrollTop: offs-40
+              }, 700, 'easeOutCubic', function() {
+                                              $('html, body').stop().animate({
+                                            scrollTop: offs
+              }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
             }
         }
         e.preventDefault();
@@ -352,3 +572,4 @@ function linkSwitchToNext(){
         $('.el-desc').css('opacity', '1');
     }
 }
+
