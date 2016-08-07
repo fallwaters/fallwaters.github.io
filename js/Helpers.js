@@ -254,6 +254,7 @@ $(document).ready(function () {
     });
     
 var memes = true;
+var memes1 = true;
     $('.left-side-bar .menu ul li a').click(function () {
         if ($(this).parent().hasClass('active')){
             memes = false;
@@ -282,8 +283,6 @@ var memes = true;
         if (memes){
             var offs = $($(this).children('a').attr('href')).offset().top;
             var t = $(this).offset().top;
-            console.log(offs);
-            var time = 10000;
             if (offs > t) {
                 e.preventDefault();
                 $('html, body').stop().animate({
@@ -292,40 +291,6 @@ var memes = true;
                                               $('html, body').stop().animate({
                                             scrollTop: offs
               }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
-//                $('html, body').stop().animate({
-//                  scrollTop: t+(offs-t)*4/40 
-//              }, 50, function() {
-//                        $('html, body').animate({
-//                  scrollTop: t+(offs-t)*8/40 
-//              }, 50, function() {
-//                            $('html, body').animate({
-//                  scrollTop: t+(offs-t)*12/40 
-//              }, 50, function() {
-//                            $('html, body').animate({
-//                  scrollTop: t+(offs-t)*16/40 
-//              }, 50, function() {
-//                                  $('html, body').animate({
-//                  scrollTop: t+(offs-t)*20/40 
-//              }, 50, function() {
-//                                    $('html, body').animate({
-//                  scrollTop: t+(offs-t)*24/40 
-//              }, 50, function() {
-//                                      $('html, body').animate({
-//                  scrollTop: t+(offs-t)*28/40 
-//              }, 50, function() {
-//                                        $('html, body').animate({
-//                  scrollTop: t+(offs-t)*32/40 
-//              }, 50, function() {
-//                                          $('html, body').animate({
-//                  scrollTop: t+(offs-t)*36/40 
-//              }, 50, function() {
-//                                            $('html, body').animate({
-//                  scrollTop: offs+10
-//              }, 50, function() {
-//                                              $('html, body').animate({
-//                                            scrollTop: offs
-//              }, 240, function () {$(document).on('scroll', onScroll)})});
-//            });});});});});});});});});
             }
                                                    
                                                    
@@ -360,14 +325,51 @@ var memes = true;
     });
 
     $('.menu-xs ul li').click(function (e) {
+        if ($(this).parent().hasClass('active')){
+            memes1 = false;
+        }
+        else {
+            memes1 = true;
+        }
         $('.menu-xs ul li').each(function () {
             $(this).removeClass('active');
         })
 
         $(this).addClass('active');
-        $('html, body').stop().animate({
-            scrollTop: $($(this).children('a').attr('href')).offset().top
-        }, 500);
+                e.preventDefault();
+         $(document).off("scroll");
+            $('.left-side-bar .menu ul li').each(function () {
+                $(this).removeClass('active');
+            });
+                $(this).addClass('active');
+    //        $('html, body').stop().animate({
+    //            scrollTop: $($(this).children('a').attr('href')).offset().top
+    //        }, 500);
+        if (memes1){
+            var offs = $($(this).children('a').attr('href')).offset().top;
+            var t = $(this).offset().top;
+            if (offs > t) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                  scrollTop: offs+40
+              }, 700, 'easeOutCubic', function() {
+                                              $('html, body').stop().animate({
+                                            scrollTop: offs
+              }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
+            }
+                                                   
+                                                   
+            else if (offs < t) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                  scrollTop: offs-40
+              }, 700, 'easeOutCubic', function() {
+                                              $('html, body').stop().animate({
+                                            scrollTop: offs
+              }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
+            }
+        }
+        e.preventDefault();
         e.preventDefault();
     });
 
