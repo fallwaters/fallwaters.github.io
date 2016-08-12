@@ -200,7 +200,7 @@ $(document).ready(function () {
 //            $(this).next().removeClass('show');
 //        }
 //    });
-        $(this).toggleClass('active');
+        $(this).toggleClass('active1');
         $(this).next().toggleClass('show');
 //        flag = false;
     });
