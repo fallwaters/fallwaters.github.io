@@ -183,6 +183,10 @@ jQuery.extend( jQuery.easing,
 	}
 });
 
+var clearInt;
+
+
+
 $(document).ready(function () {
     // Плавный скролл к якорям
     $('.accordion').on('click', function (e) {
@@ -202,12 +206,15 @@ $(document).ready(function () {
     });
     
     var isCleared = false;
-    var clearInterval = setInterval(linkSwitchToNext, 4000);
+    clearInt = setInterval(linkSwitchToNext, 4000);
     
     $('a.link').on('click', linkSwitch);
     
     
     $('a[href$="#top"]').bind('click', function (e){
+        $('.left-side-bar .menu ul li').each(function () {
+                $(this).removeClass('active');
+            });
         e.preventDefault();
         $(document).off('scroll');
         var anchor2 = $($(this).attr('href')).offset().top;
@@ -528,6 +535,8 @@ function linkSwitch(e){
             $('.flat-pol').css('opacity', '1');
             $('.po-desc').css('opacity', '1');
         }
+    clearInterval(clearInt);
+    clearInt = setInterval(linkSwitchToNext, 4000);
 }
 
 function linkSwitchToNext(){
