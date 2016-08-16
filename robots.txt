@@ -1,0 +1,3 @@
+User-agent: *
+Host: xn--e1aoddhq.xn--b1abglp.xn--p1ai
+Sitemap: http://xn--e1aoddhq.xn--b1abglp.xn--p1ai/sitemap.xml

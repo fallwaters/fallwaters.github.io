@@ -1,5 +1,5 @@
 <?php
-	 $to = 'narek1110@gmail.com'; //Почта получателя, через запятую можно указать сколько угодно адресов
+	 $to = 'texnomotors@mail.ru'; //Почта получателя, через запятую можно указать сколько угодно адресов
      $subject = 'Отзыв'; //Загаловок сообщения
      $fio = htmlspecialchars($_POST["fio"]);
 	 $review = htmlspecialchars($_POST["review"]);

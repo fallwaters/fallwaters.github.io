@@ -290,8 +290,8 @@ var memes1 = true;
         if (memes){
             var offs = $($(this).children('a').attr('href')).offset().top;
             var t = $(this).offset().top;
+            e.preventDefault();
             if (offs > t) {
-                e.preventDefault();
                 $('html, body').stop().animate({
                   scrollTop: offs+40
               }, 700, 'easeOutCubic', function() {
@@ -302,7 +302,6 @@ var memes1 = true;
                                                    
                                                    
             else if (offs < t) {
-                e.preventDefault();
                 $('html, body').stop().animate({
                   scrollTop: offs-40
               }, 700, 'easeOutCubic', function() {
@@ -311,7 +310,6 @@ var memes1 = true;
               }, 300, 'easeOutCirc', function () {$(document).on('scroll', onScroll)});});
             }
         }
-        e.preventDefault();
     });
     
     $(document).on('scroll', onScroll);

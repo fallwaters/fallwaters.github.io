@@ -228,7 +228,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
     .left-side-bar .top-logo {
         position: relative;
         display: inline-block;
-		background: url('../img/remont.png') no-repeat center;
+		background: url('../img/gilev-remont.png') no-repeat center;
         background-size: 80%;
         background-color: white;
         border: 5px solid #24AD1B;
@@ -344,7 +344,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
       rgba(0, 0, 0, 0.55),
       rgba(0, 0, 0, 0.55)
     ),
-    url(../img/1.jpg);
+    url(../img/flat-bg.jpg);
 	background-size: cover;
 }
 
@@ -362,7 +362,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
 }
 
     .slider-img.one {
-        background: url('../img/1.jpg') no-repeat center;
+        background: url('../img/flat-bg.jpg') no-repeat center;
         background-size: cover;
     }
 
@@ -424,10 +424,9 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
     position: absolute;
     text-align: right;
     color: #fff;
-    margin-left: auto;
     left: 0;
     right: 0;
-    margin-right: 50px;
+    margin-right: 20px;
     margin-top: 500px;
     z-index: 2;
 }
@@ -1080,7 +1079,7 @@ box-shadow: 0px 2px 59px 16px rgba(0,0,0,0.75);
                 font-size: 12px;
                 text-align: center;
                 width: 100%;
-                margin-top: 50px;
+                margin-top: 30px;
             }
 
             .our-deals .deals .deal div .car-price {
@@ -1733,7 +1732,7 @@ table.fixed td:nth-of-type(3) {
             margin: 0;
         }
 
-        .our-scheme .icons h2 {
+        .our-scheme .icons h1 {
             font-size: 60px;
         }
 
@@ -2329,7 +2328,7 @@ table.fixed td:nth-of-type(3) {
             font-size: 14px;
         }
 
-    .our-scheme .icons h2 {
+    .our-scheme .icons h1 {
         font-size: 80px;
     }
 
