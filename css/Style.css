@@ -1588,13 +1588,13 @@ table.fixed td:nth-of-type(3) {
     }
 }
 
-@media(min-width: 736px) {
+@media(min-width: 820px) {
     .our-deals .deals .deal div .btn-more {
         margin-left: 35%;
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: 820px) {
     
     .left-side-bar .left-side-contacts {
         margin-top: 20px;
