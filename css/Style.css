@@ -214,9 +214,8 @@ html, body {
 .left-side-bar {
     background-color: #000;
     height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: fixed;
+    -webkit-backface-visibility: hidden;
     z-index: 100;
 	border-right: 5px solid #24AD1B;
 }
