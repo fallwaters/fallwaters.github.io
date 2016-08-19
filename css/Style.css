@@ -323,12 +323,7 @@ html, body {
     position: absolute;
     right: 0;
     top: 0;
-    background: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-    url(../img/flat-bg.jpg);
+    background-image: url(../img/flat-bg.jpg);
 	background-size: cover;
 }
 
