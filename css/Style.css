@@ -215,12 +215,6 @@ html, body {
     background-color: #000;
     height: 100%;
     position: fixed;
-    -webkit-box-shadow: 0 0 20px 0 #000000;
-    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
-    -moz-box-shadow: 0 0 20px 0 #000000;
-    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 20px 0 #000000;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
     z-index: 100;
 	border-right: 5px solid #24AD1B;
 }
