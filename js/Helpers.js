@@ -189,9 +189,6 @@ var clearInt;
 
 $(document).ready(function () {
     // Плавный скролл к якорям
-    
-    console.log(navigator.userAgent.toLowerCase());
-    $('.slogan h1').text(navigator.userAgent.toLowerCase());
     $('.accordion').on('click', function (e) {
 //    var flag = false;
 //    if ($(this).hasClass('active')){

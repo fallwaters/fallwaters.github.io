@@ -210,14 +210,18 @@ html, body {
             .menu-xs ul li a:hover {
                 font-size: 11px;
             }
-
 .left-side-bar {
     background-color: #000;
     height: 100%;
-    position: fixed;
-    -webkit-backface-visibility: hidden;
-    z-index: 100;
+    -webkit-box-shadow: 0 0 20px 0 #000000;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0 0 20px 0 #000000;
+    -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 20px 0 #000000;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
 	border-right: 5px solid #24AD1B;
+	position: fixed;
+	 z-index: 10;
 }
 
     .left-side-bar .left-side-top {
@@ -235,16 +239,6 @@ html, body {
         border-radius: 50%;
         margin: 30px 0 25px 30px;
     }
-
-    .left-side-bar .menu {
-        position: absolute;
-        left: 0;
-        z-index: 101;
-        margin-top: 0px;
-        background-color: #000;
-		border-right: 5px solid #24AD1B;
-    }
-
         .left-side-bar .menu ul {
             list-style: none;
         }
@@ -265,7 +259,6 @@ html, body {
             }
 
     .left-side-bar .left-side-contacts {
-        margin-top: 350px;
         text-align: center;
         color: #ffffff;
         padding-bottom: 12px;
@@ -312,7 +305,6 @@ html, body {
     overflow: hidden;
     height: 654px;
 }
-
 .bg {
     height: 100%;
     width: 100%;
@@ -327,50 +319,6 @@ html, body {
     url(../img/flat-bg.jpg);
 	background-size: cover;
 }
-
-
-
-.carousel {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.slider-img {
-    width: 100%;
-}
-
-    .slider-img.one {
-        background: url('../img/flat-bg.jpg') no-repeat center;
-        background-size: cover;
-    }
-
-    .slider-img.two {
-        background: url('../img/2.jpg') no-repeat center;
-        background-size: cover;
-    }
-
-    .slider-img.three {
-        background: url('../img/3.jpg') no-repeat center;
-        background-size: cover;
-    }
-
-.carousel-inner {
-    height: 100%;
-    width: 100%;
-}
-
-    .carousel-inner > .item {
-        height: 100%;
-        width: 100%;
-    }
-
-        .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
-            height: 100%;
-            width: 100%;
-        }
-
 .slogan-top-red {
     width: 100%;
     text-align: center;
@@ -1412,9 +1360,6 @@ table.fixed td:nth-of-type(3) {
         top: 60%;
     }
 
-    .bg {
-        background: url(../img/flat-bg.jpg);
-    }
     .top-buttons {
         margin: 450px 15px 0 15px;
     }
